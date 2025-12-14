@@ -66,3 +66,4 @@ async function verificarMensaje(mensaje, hashRecibido) {
   console.log("Mensaje manipulado válido:", esValidoManipulado);
 })();
 ```
+El segundo mensaje devuelve false porque el mensaje no es el mismo que el que se usó para generar el hash.
