@@ -9,7 +9,7 @@ Las actividades están diseñadas para:
 
 ---
 
-## 🎯 Objetivos de aprendizaje
+## Objetivos de aprendizaje
 Al finalizar estas actividades, el alumnado será capaz de:
 
 - Comprender qué es la **integridad de la información**.
@@ -21,7 +21,7 @@ Al finalizar estas actividades, el alumnado será capaz de:
 
 ---
 
-## 📚 Relación con el currículo (RA5)
+## Relación con el currículo (RA5)
 
 Esta actividad está alineada con el **RA5**:
 
@@ -36,7 +36,7 @@ Se trabajan, a nivel introductorio, los siguientes aspectos:
 
 ---
 
-## 🧩 Contenido del repositorio
+## Contenido del repositorio
 
 El repositorio se organiza en **micro-píldoras**, cada una con:
 - un concepto clave
@@ -55,7 +55,7 @@ El repositorio se organiza en **micro-píldoras**, cada una con:
 
 ---
 
-## 🧪 Requisitos
+## Requisitos
 No es necesario instalar nada.
 
 Solo se necesita:
@@ -74,7 +74,7 @@ Solo se necesita:
 
 ---
 
-## 🔗 Conexión con proyectos reales
+## Conexión con proyectos reales
 Los conceptos trabajados aquí son la base de:
 - Tokens JWT
 - Firmas de mensajes
