@@ -1,4 +1,4 @@
-# Píldora 3 — Hash + secreto  
+# Píldora 3 — Hash + secreto (clave privada) 
 ## Detectar manipulaciones de mensajes
 
 ---
@@ -86,4 +86,17 @@ async function hash(text) {
   console.log("¿Mensaje válido?", hashEnviado === hashCalculado);
 })();
 ```
+###  Relación con tokens (JWT)
 
+Este ejemplo es una versión muy sencilla de cómo funcionan los tokens:
+
+1. El usuario se identifica (login)
+2. El servidor crea un token
+3. Ese token está firmado con una **clave privada**
+4. El cliente guarda el token
+5. En cada petición, el cliente envía el token
+6. El servidor verifica el token usando **su clave privada**
+
+👉 El cliente **no conoce la clave privada**, solo el token.
+
+---
