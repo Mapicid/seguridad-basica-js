@@ -104,7 +104,7 @@ hash("Nota=10") → d4c5e1...
 
 ---
 
-## 🚨 Ejemplo de manipulación
+## Ejemplo de manipulación
 
 Durante el envío, alguien modifica el mensaje:
 
@@ -124,7 +124,12 @@ Resultado:
 
 ---
 
-## 🧠 Idea clave para recordar
+## ¿Qué algoritmo usar según el objetivo de seguridad?
+Integridad de datos → SHA-256
+Contraseñas         → bcrypt / argon2
+Hash con secreto    → HMAC-SHA-256
+
+## Idea clave para recordar
 
 Un hash **no se descifra**.  
 Para comprobar un mensaje, **se vuelve a calcular el hash y se compara**.
