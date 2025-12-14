@@ -125,9 +125,9 @@ Resultado:
 ---
 
 ## ¿Qué algoritmo usar según el objetivo de seguridad?
-Integridad de datos → SHA-256
-Contraseñas         → bcrypt / argon2
-Hash con secreto    → HMAC-SHA-256
+- Integridad de datos → SHA-256
+- Contraseñas         → bcrypt / argon2
+- Hash con secreto    → HMAC-SHA-256
 
 ## Idea clave para recordar
 
