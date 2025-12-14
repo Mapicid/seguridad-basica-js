@@ -65,3 +65,18 @@ async function hash(text) {
   console.log("¿El mensaje es el mismo?", hashOriginal === hashModificado);
 })();
 ```
+## ¿Qué hace este programa?
+
+Este programa calcula el **hash SHA-256** de dos mensajes:
+
+- Un mensaje original.
+- El mismo mensaje con una pequeña modificación.
+
+Después, **compara ambos hashes**.
+
+Los hashes **no coinciden**, el programa devuelve `false`, lo que indica que:
+- El mensaje **ha sido modificado**.
+- La **integridad del mensaje no se mantiene**.
+
+Esto demuestra que el hash permite **detectar cambios en la información**, aunque el mensaje siga siendo legible.
+
