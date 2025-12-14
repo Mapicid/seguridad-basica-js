@@ -55,3 +55,78 @@ async function hash(text) {
   console.log("Hash 2:", await hash(mensaje2));
 })();
 ```
+# Ejemplo sencillo: Emisor y receptor usando hash  
+## Comprobación de integridad de un mensaje
+
+Este ejemplo muestra cómo se utiliza un **hash** para comprobar si un mensaje ha sido modificado durante su envío. No se usa cifrado, solo **integridad de la información**.
+
+---
+
+## Emisor (quien envía el mensaje)
+
+El emisor tiene el siguiente mensaje:
+
+"Nota=10"
+
+Calcula el hash del mensaje:
+
+hash("Nota=10") → d4c5e1...
+
+Envía al receptor **dos cosas**:
+- El mensaje
+- El hash del mensaje
+
+Mensaje: "Nota=10"  
+Hash:    d4c5e1...
+
+---
+
+## Receptor (quien recibe el mensaje)
+
+El receptor recibe:
+
+Mensaje: "Nota=10"  
+Hash recibido: d4c5e1...
+
+Para comprobar si el mensaje ha sido modificado, el receptor:
+
+1. Vuelve a calcular el hash del mensaje recibido.
+2. Compara el hash calculado con el hash recibido.
+
+hash("Nota=10") → d4c5e1...
+
+---
+
+##  Resultado de la verificación
+
+- Si los hashes **coinciden** → el mensaje **NO ha sido modificado**
+- Si los hashes **no coinciden** → el mensaje **ha sido manipulado**
+
+---
+
+## 🚨 Ejemplo de manipulación
+
+Durante el envío, alguien modifica el mensaje:
+
+"Nota=10" → "Nota=9"
+
+El hash recibido sigue siendo el original:
+
+d4c5e1...
+
+El receptor calcula el hash del mensaje modificado:
+
+hash("Nota=9") → 33c1df...
+
+Resultado:
+- Los hashes **no coinciden**
+- Se detecta la manipulación del mensaje
+
+---
+
+## 🧠 Idea clave para recordar
+
+Un hash **no se descifra**.  
+Para comprobar un mensaje, **se vuelve a calcular el hash y se compara**.
+
+Este mecanismo se utiliza para garantizar la **integridad de la información** en aplicaciones y APIs.
