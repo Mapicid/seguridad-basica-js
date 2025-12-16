@@ -21,7 +21,7 @@ Al finalizar estas actividades, el alumnado será capaz de:
 
 ---
 
-## Relación con el DBC (RA5)
+## Relación con el DCB (RA5)
 
 Esta actividad está alineada con el **RA5**:
 
