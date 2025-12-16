@@ -1,6 +1,6 @@
 # Seguridad básica – Integridad y Hash (JavaScript)
 
-Este repositorio introduce **conceptos básicos de seguridad** a través de ejemplos muy sencillos en **JavaScript**, pensados para entender **qué problema resuelve un hash** antes de usar soluciones más avanzadas.
+Este repositorio introduce **conceptos básicos de seguridad** a través de ejemplos muy sencillos en **JavaScript**, pensados para entender **qué problema resuelve un hash** antes de utilizar soluciones más avanzadas.
 
 No se busca memorizar algoritmos, sino **comprender ideas clave**.
 
@@ -31,7 +31,7 @@ Un **hash** es una especie de **huella digital** de un mensaje.
 - Entra un mensaje → sale un hash (una cadena de letras y números).
 - El **mismo mensaje** siempre genera el **mismo hash**.
 - Si el mensaje cambia, **el hash cambia completamente**, aunque el cambio sea mínimo.
-- El hash me permite comprobar la integridad de los datos.
+- El hash permite **comprobar la integridad de los datos**.
 
 ---
 
@@ -39,7 +39,7 @@ Un **hash** es una especie de **huella digital** de un mensaje.
 Un hash **no es cifrado**.
 
 - Con un hash **no se puede recuperar el mensaje original**.
-- El hash solo sirve para **comprobar si el mensaje es el mismo**.
+- El hash solo sirve para **comprobar si el mensaje es el mismo o ha sido modificado**.
 
 ---
 
@@ -51,8 +51,8 @@ En los ejemplos se utiliza **SHA-256**, un algoritmo de hash muy común y seguro
 ## Relación con aplicaciones reales
 Estos conceptos son la base de:
 - Verificación de mensajes.
-- Hash de contraseñas.
-- Tokens y firmas.
+- Almacenamiento seguro de contraseñas.
+- Tokens y firmas digitales.
 - Seguridad en APIs.
 
 ---
@@ -62,9 +62,9 @@ Si el mensaje cambia → el hash cambia.
 
 > Una aplicación segura no confía: **verifica**.
 
+---
 
 ## Relación con el DCB (RA5)
-
 Esta actividad está alineada con el **RA5**:
 
 > *Protege las aplicaciones y los datos definiendo y aplicando criterios de seguridad en el acceso, almacenamiento y transmisión de la información.*
@@ -82,6 +82,4 @@ No es necesario instalar nada.
 Solo se necesita:
 - Un navegador moderno (Chrome, Firefox, Edge…)
 - Acceso a la **consola del navegador** (F12)
-
----
 
