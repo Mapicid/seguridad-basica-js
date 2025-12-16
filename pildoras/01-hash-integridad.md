@@ -41,19 +41,34 @@ El objetivo es **observar qué ocurre** cuando una contraseña pasa por un hash.
 4. Copia y pega el siguiente código:
 
 ```js
+// Función que calcula el hash SHA-256 de un texto
 async function hash(texto) {
+
+  // Convertimos el texto (string) en bytes
+  // Los algoritmos de hash trabajan con datos binarios, no con texto
   const datos = new TextEncoder().encode(texto);
+
+  // Aplicamos el algoritmo de hash SHA-256
+  // crypto.subtle.digest devuelve un ArrayBuffer con el resultado
   const buffer = await crypto.subtle.digest("SHA-256", datos);
+
+  // Convertimos el resultado binario en texto hexadecimal
+  // Esto es solo para poder mostrar el hash por pantalla
   return [...new Uint8Array(buffer)]
     .map(b => b.toString(16).padStart(2, "0"))
     .join("");
 }
 
+// Programa principal
 (async () => {
-  const password = "1234";
 
-  console.log("Contraseña:", password);
-  console.log("Hash:", await hash(password));
+ const password = "1234";
+
+ console.log("Contraseña:", password);
+
+ console.log("Hash:", await hash(password));
+
 })();
+
 ```
 
