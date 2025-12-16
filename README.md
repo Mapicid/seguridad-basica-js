@@ -1,25 +1,67 @@
-# Seguridad básica en aplicaciones (JavaScript)
+# Seguridad básica – Integridad y Hash (JavaScript)
 
-Este repositorio contiene una serie de **micro-píldoras prácticas** para introducir conceptos básicos de **seguridad y criptografía** aplicados a aplicaciones y APIs.
+Este repositorio introduce **conceptos básicos de seguridad** a través de ejemplos muy sencillos en **JavaScript**, pensados para entender **qué problema resuelve un hash** antes de usar soluciones más avanzadas.
 
-Las actividades están diseñadas para:
-- ser **muy sencillas**
-- poder probarse **directamente desde la consola del navegador**
-- comprender conceptos clave antes de pasar a soluciones más complejas (APIs, JWT, HTTPS, etc.)
+No se busca memorizar algoritmos, sino **comprender ideas clave**.
 
 ---
 
-## Objetivos de aprendizaje
-Al finalizar estas actividades, el alumnado será capaz de:
+## ¿Qué problema resolvemos?
+Cuando enviamos un mensaje, archivo o dato:
 
-- Comprender qué es la **integridad de la información**.
-- Explicar qué es un **hash criptográfico** y para qué se utiliza.
-- Diferenciar claramente **hash** y **cifrado**.
-- Detectar la **manipulación de datos**.
-- Relacionar estos conceptos con la **seguridad en APIs**.
-- Aplicar principios básicos de **programación segura**.
+- ¿Cómo sabemos que **no ha cambiado** por el camino?
+- ¿Cómo detectamos si alguien lo ha modificado?
+
+En informática no se confía: **se comprueba**.
 
 ---
+
+## Concepto clave: Integridad
+La **integridad** consiste en poder asegurar que:
+
+> Un mensaje recibido es **exactamente el mismo** que el mensaje enviado.
+
+Si el mensaje cambia, debemos poder detectarlo.
+
+---
+
+## ¿Qué es un hash?
+Un **hash** es una especie de **huella digital** de un mensaje.
+
+- Entra un mensaje → sale un hash (una cadena de letras y números).
+- El **mismo mensaje** siempre genera el **mismo hash**.
+- Si el mensaje cambia, **el hash cambia completamente**, aunque el cambio sea mínimo.
+- El hash me permite comprobar la integridad de los datos.
+
+---
+
+## Lo que un hash NO es
+Un hash **no es cifrado**.
+
+- Con un hash **no se puede recuperar el mensaje original**.
+- El hash solo sirve para **comprobar si el mensaje es el mismo**.
+
+---
+
+## Algoritmo utilizado
+En los ejemplos se utiliza **SHA-256**, un algoritmo de hash muy común y seguro.
+
+---
+
+## Relación con aplicaciones reales
+Estos conceptos son la base de:
+- Verificación de mensajes.
+- Hash de contraseñas.
+- Tokens y firmas.
+- Seguridad en APIs.
+
+---
+
+## Idea clave para llevarse
+Si el mensaje cambia → el hash cambia.
+
+> Una aplicación segura no confía: **verifica**.
+
 
 ## Relación con el DCB (RA5)
 
@@ -30,28 +72,7 @@ Esta actividad está alineada con el **RA5**:
 Se trabajan, a nivel introductorio, los siguientes aspectos:
 - Uso de **técnicas criptográficas** (hash SHA-256).
 - Protección de la **información transmitida**.
-- Detección de **modificaciones no autorizadas**.
-- Buenas prácticas de **programación segura**.
 - Base conceptual para sistemas de seguridad reales (tokens, firmas, APIs seguras).
-
----
-
-## Contenido del repositorio
-
-El repositorio se organiza en **micro-píldoras**, cada una con:
-- un concepto clave
-- un ejemplo práctico
-- una prueba sencilla
-
-### Píldoras incluidas:
-1. **Hash como detector de cambios**  
-   (integridad de la información)
-2. **El hash no es cifrado**  
-   (diferencia entre integridad y confidencialidad)
-3. **Hash + secreto**  
-   (detección de manipulaciones)
-4. **Verificación OK / NO OK**  
-   (aceptar o rechazar datos)
 
 ---
 
@@ -64,27 +85,3 @@ Solo se necesita:
 
 ---
 
-## ▶️ Cómo usar este repositorio
-
-1. Abre los ejemplos indicados.
-2. Copia el código JavaScript.
-3. Pégalo en la **consola del navegador**.
-4. Ejecuta el código y observa el resultado.
-5. Modifica los mensajes y analiza qué ocurre.
-
----
-
-## Conexión con proyectos reales
-Los conceptos trabajados aquí son la base de:
-- Tokens JWT
-- Firmas de mensajes
-- Hash de contraseñas
-- Seguridad en APIs REST
-- Comunicaciones seguras
-
----
-
-## 📌 Nota final
-Estas actividades **no sustituyen** a sistemas de seguridad completos, pero ayudan a entender **qué problema se está resolviendo** antes de usar librerías y frameworks.
-
-> Una aplicación segura no confía: verifica.
