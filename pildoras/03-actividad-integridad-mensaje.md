@@ -58,7 +58,7 @@ Debes comprobar al menos estos casos:
 
 ## Entrega
 Debes entregar:
-- El archivo `05_integridad_hash_sha256.html`.
+- El archivo `03_integridad_hash_sha256.html`.
 - Capturas donde se vean:
   - Los mensajes.
   - Sus hashes.
@@ -66,8 +66,4 @@ Debes entregar:
 - Un breve documento con las respuestas y una conclusión.
 
 ---
-
-### Idea clave
-El hash **no protege el contenido**,  
-protege la **integridad**.
 
