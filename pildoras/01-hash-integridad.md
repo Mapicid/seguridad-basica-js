@@ -27,12 +27,18 @@ Si alguien modifica el mensaje, la alarma salta porque el hash ya no coincide.
 
 ---
 
-## Ejemplo práctico (Consola del navegador)
+## Ejemplo 1 – Hash de una contraseña (versión básica)
+
+En este primer ejemplo vamos a **calcular el hash de una contraseña**.  
+No se comprueba todavía si es correcta o no.  
+El objetivo es **observar qué ocurre** cuando una contraseña pasa por un hash.
+
+---
 
 1. Abre el navegador.
 2. Pulsa **F12**.
 3. Ve a la pestaña **Console**.
-4. Copia y pega este código:
+4. Copia y pega el siguiente código:
 
 ```js
 async function hash(texto) {
@@ -44,12 +50,10 @@ async function hash(texto) {
 }
 
 (async () => {
-  const mensajeA = "Nota=10";
-  const mensajeB = "Nota=9";
+  const password = "1234";
 
-  console.log("Mensaje A:", mensajeA);
-  console.log("Hash A:", await hash(mensajeA));
-
-  console.log("Mensaje B:", mensajeB);
-  console.log("Hash B:", await hash(mensajeB));
+  console.log("Contraseña:", password);
+  console.log("Hash:", await hash(password));
 })();
+```
+
