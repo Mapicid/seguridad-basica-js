@@ -1,87 +1,104 @@
-# Práctica 05 — Verificación de integridad con clave privada
-
-En esta práctica vas a simular, de forma muy sencilla, cómo un sistema comprueba
-si un mensaje ha sido modificado usando un **hash y una clave privada**.
-
-Esta idea es la base del funcionamiento de los **tokens** usados en aplicaciones y APIs.
 
 ---
 
 ## Objetivo
-
-- Comprobar la **integridad de un mensaje**
-- Detectar si el mensaje ha sido **manipulado**
-- Entender cómo funciona la verificación usada en los **tokens**
+Comprender el concepto de **integridad de la información** mediante el uso de **hashes**.  
+Se deberá comprobar que **si un mensaje cambia, su hash cambia**, aunque la modificación sea mínima.
 
 ---
 
-## Idea clave
+## Contexto
+Debes crear una **pequeña aplicación web en HTML y JavaScript** que permita comprobar si un mensaje ha sido modificado.
 
-- El hash **no impide** que cambien el mensaje.
-- Sirve para **detectar cambios**.
-- Cuando se usa junto a una **clave privada**, solo quien conoce esa clave puede generar un hash válido.
+La aplicación deberá:
+- Permitir introducir **dos mensajes de texto**.
+- Calcular el **hash SHA-256** de cada mensaje.
+- Comparar ambos hashes para decidir si el mensaje ha sido modificado.
 
----
+## Parte A – Estructura del archivo HTML
 
-## Qué tienes que hacer
+Crea un archivo HTML que contenga:
 
-Trabaja desde la **consola del navegador (F12)**.
-
-### 1️⃣ Toma como referencia el ejemplo de la **Píldora 03**
-
-Usa el mismo esquema de código que en la **Píldora 03 (hash + clave privada)**.
-
----
-
-### 2️⃣ Personaliza el ejemplo
-
-Debes elegir tú:
-
-- Un **mensaje propio**  
-  (por ejemplo:  
-  `Alumno=TuNombre;Nota=8`  
-  `Pedido=123;Total=20`  
-  `Usuario=Ana;Rol=user`)
-
-- Una **clave privada propia**  
-  (no uses la del ejemplo)
+- Estructura HTML básica (`<!doctype html>`, `<html>`, `<head>`, `<body>`).
+- Un título visible en la página.
+- Dos cajas de texto (`textarea`):
+  - **Mensaje 1 (original)**.
+  - **Mensaje 2 (posible modificado)**.
+- Un botón para calcular el hash del Mensaje 1.
+- Un botón para calcular el hash del Mensaje 2.
+- Un botón para **comparar** ambos hashes.
+- Un área donde se muestre:
+  - Hash del Mensaje 1.
+  - Hash del Mensaje 2.
+  - Resultado de la comparación.
 
 ---
 
-### 3️⃣ Genera el hash del mensaje usando la clave privada
+## Parte B – Cálculo del hash SHA-256
 
-Simula que el **servidor** crea un token a partir de: clave privada + mensaje
+Implementa en **JavaScript** una función que:
 
----
-
-### 4️⃣ Simula la verificación
-
-Prueba **dos casos**:
-
-- ✔️ Mensaje recibido igual al original  
-- ❌ Mensaje recibido modificado (cambia algún dato)
-
-Comprueba en consola si el mensaje es válido o no.
+1. Reciba un texto como parámetro.
+2. Calcule su **hash SHA-256** utilizando la API `crypto.subtle`.
+3. Devuelva el hash en formato **hexadecimal**.
 
 ---
 
-## ✅ Resultado esperado
+## Parte C – Lógica de la aplicación
 
-- Cuando el mensaje **no cambia**, el resultado debe ser: ¿Mensaje válido? true
-- 
-- Cuando el mensaje **ha sido modificado**, el resultado debe ser: ¿Mensaje válido? false
+### 1. Calcular hash del Mensaje 1
+- Leer el contenido del primer `textarea`.
+- Calcular su hash.
+- Mostrar el resultado en la página.
+
+### 2. Calcular hash del Mensaje 2
+- Leer el contenido del segundo `textarea`.
+- Calcular su hash.
+- Mostrar el resultado en la página.
+
+### 3. Comparar mensajes
+- Comparar los hashes obtenidos.
+- Si los hashes son iguales → **el mensaje NO se ha modificado**.
+- Si los hashes son distintos → **el mensaje SÍ se ha modificado**.
+- Mostrar el resultado de forma clara al usuario.
 
 ---
 
-## Entrega
-- Captura de la consola mostrando:
-  - un mensaje válido
-  - un mensaje no válido
-- Breve explicación (5–6 líneas) de:
-  - qué has hecho
-  - por qué en un caso sale `true` y en otro `false`
+## Parte D – Pruebas obligatorias
+
+Realiza, como mínimo, las siguientes pruebas:
+
+1. Mensaje 1 y Mensaje 2 exactamente iguales.
+2. Cambiar una sola letra en el Mensaje 2.
+3. Añadir un espacio al final del Mensaje 2.
+4. Añadir un emoji o símbolo especial al Mensaje 2.
+
+Observa cómo cambia el hash en cada caso.
 
 ---
 
+## Parte E – Preguntas a responder
+
+Responde brevemente en el documento de entrega:
+
+1. ¿Por qué el hash cambia completamente aunque el mensaje cambie muy poco?
+2. ¿Sirve el hash para ocultar el mensaje? Explica por qué.
+3. ¿En qué situaciones reales es útil comprobar la integridad de un mensaje?
+4. ¿Qué información deberías guardar para comprobar la integridad de un mensaje en el futuro?
+
+---
+
+## Parte F – Entrega
+
+El alumno debe entregar:
+
+- El archivo `06_integridad_hash_sha256.html`.
+- Capturas de pantalla donde se vea:
+  - Mensaje 1 y su hash.
+  - Mensaje 2 modificado y su hash.
+  - Resultado de la comparación.
+- Un documento con las respuestas a las preguntas y una breve conclusión.
+
+---
 
 
