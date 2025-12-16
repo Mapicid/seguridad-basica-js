@@ -90,9 +90,9 @@ Responde brevemente en el documento de entrega:
 
 ## Parte F – Entrega
 
-El alumno debe entregar:
+Se derá entregar:
 
-- El archivo `06_integridad_hash_sha256.html`.
+- El archivo `05_integridad_hash_sha256.html`.
 - Capturas de pantalla donde se vea:
   - Mensaje 1 y su hash.
   - Mensaje 2 modificado y su hash.
