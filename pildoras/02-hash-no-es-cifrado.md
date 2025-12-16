@@ -1,44 +1,21 @@
-# El hash y la integridad del mensaje
-
 ## Idea clave
+El **hash sirve para comprobar la integridad de un mensaje**.
 
-El **hash sirve para comprobar la integridad del mensaje**, es decir, **detectar cambios**.
+> Permite detectar si un mensaje **ha sido modificado**.
 
-Es importante entender que:
+Es importante entender que cuando usamos un hash:
 
-> El hash **no impide** que cambien un mensaje.  
-> Sirve para **detectar si el mensaje ha sido modificado**.
+- El mensaje no se oculta.
 
-El mensaje puede cambiar, pero si cambia, el hash ya no coincidirá.
+- El mensaje se envía en texto plano.
 
----
+- Cualquiera que lo intercepte puede leerlo.
 
-## Qué significa comprobar la integridad
-
-Comprobar la integridad de un mensaje significa:
-- Verificar que el mensaje recibido es **exactamente el mismo** que el original.
-- Detectar si alguien ha modificado el contenido durante el envío o almacenamiento.
-
-El hash actúa como una **huella digital del mensaje**.
-
----
-
-##  Ejemplo sencillo: detectar cambios en un mensaje
-
-Vamos a simular dos situaciones:
-1. El mensaje original.
-2. El mismo mensaje con un pequeño cambio.
-
-Si el mensaje cambia, el hash cambia.
+- Pero si lo modifica, lo sabremos porque el hash ya no coincide.
 
 ---
 
 ## Ejemplo práctico (consola del navegador)
-
-1. Abre el navegador.
-2. Pulsa **F12**.
-3. Ve a la pestaña **Console**.
-4. Copia y pega el siguiente código:
 
 ```js
 async function hash(text) {
@@ -64,6 +41,7 @@ async function hash(text) {
 
   console.log("¿El mensaje es el mismo?", hashOriginal === hashModificado);
 })();
+
 ```
 ## ¿Qué hace este programa?
 
